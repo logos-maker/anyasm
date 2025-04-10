@@ -1,0 +1,268 @@
+#define NOP    0x00    // No Operation
+#define LXI_B  0x01    // Load immediate register pair B & C
+#define STAX_B 0x02    // Store accumulator at (BC)
+#define INX_B  0x03    // Increment register pair B & C
+#define INR_B  0x04    // Increment B
+#define DCR_B  0x05    // Decrement B
+#define MVI_B  0x06    // Move immediate to B
+#define RLC    0x07    // Rotate accumulator left
+// 0x08 unused
+#define DAD_B  0x09    // Add B & C to HL
+#define LDAX_B 0x0A    // Load accumulator from (BC)
+#define DCX_B  0x0B    // Decrement register pair B & C
+#define INR_C  0x0C    // Increment C
+#define DCR_C  0x0D    // Decrement C
+#define MVI_C  0x0E    // Move immediate to C
+#define RRC    0x0F    // Rotate accumulator right
+
+#define LXI_D  0x11    // Load immediate register pair D & E
+#define STAX_D 0x12    // Store accumulator at (DE)
+#define INX_D  0x13    // Increment register pair D & E
+#define INR_D  0x14    // Increment D
+#define DCR_D  0x15    // Decrement D
+#define MVI_D  0x16    // Move immediate to D
+#define RAL    0x17    // Rotate accumulator left through carry
+// 0x18 unused
+#define DAD_D  0x19    // Add D & E to HL
+#define LDAX_D 0x1A    // Load accumulator from (DE)
+#define DCX_D  0x1B    // Decrement register pair D & E
+#define INR_E  0x1C    // Increment E
+#define DCR_E  0x1D    // Decrement E
+#define MVI_E  0x1E    // Move immediate to E
+#define RAR    0x1F    // Rotate accumulator right through carry
+
+#define LXI_H  0x21    // Load immediate register pair H & L
+#define SHLD   0x22    // Store HL direct
+#define INX_H  0x23    // Increment register pair H & L
+#define INR_H  0x24    // Increment H
+#define DCR_H  0x25    // Decrement H
+#define MVI_H  0x26    // Move immediate to H
+#define DAA    0x27    // Decimal adjust accumulator
+// 0x28 unused
+#define DAD_H  0x29    // Add H & L to HL
+#define LHLD   0x2A    // Load HL direct
+#define DCX_H  0x2B    // Decrement register pair H & L
+#define INR_L  0x2C    // Increment L
+#define DCR_L  0x2D    // Decrement L
+#define MVI_L  0x2E    // Move immediate to L
+#define CMA    0x2F    // Complement accumulator
+
+#define LXI_SP 0x31    // Load immediate stack pointer
+#define STA    0x32    // Store accumulator direct
+#define INX_SP 0x33    // Increment stack pointer
+#define INR_M  0x34    // Increment memory (HL)
+#define DCR_M  0x35    // Decrement memory (HL)
+#define MVI_M  0x36    // Move immediate to memory (HL)
+#define STC    0x37    // Set carry
+// 0x38 unused
+#define DAD_SP 0x39    // Add stack pointer to HL
+#define LDA    0x3A    // Load accumulator direct
+#define DCX_SP 0x3B    // Decrement stack pointer
+#define INR_A  0x3C    // Increment A
+#define DCR_A  0x3D    // Decrement A
+#define MVI_A  0x3E    // Move immediate to A
+#define CMC    0x3F    // Complement carry
+
+#define MOV_BB 0x40    // Move B to B
+#define MOV_BC 0x41    // Move C to B
+#define MOV_BD 0x42    // Move D to B
+#define MOV_BE 0x43    // Move E to B
+#define MOV_BH 0x44    // Move H to B
+#define MOV_BL 0x45    // Move L to B
+#define MOV_BM 0x46    // Move memory (HL) to B
+#define MOV_BA 0x47    // Move A to B
+#define MOV_CB 0x48    // Move B to C
+#define MOV_CC 0x49    // Move C to C
+#define MOV_CD 0x4A    // Move D to C
+#define MOV_CE 0x4B    // Move E to C
+#define MOV_CH 0x4C    // Move H to C
+#define MOV_CL 0x4D    // Move L to C
+#define MOV_CM 0x4E    // Move memory (HL) to C
+#define MOV_CA 0x4F    // Move A to C
+
+#define MOV_DB 0x50    // Move B to D
+#define MOV_DC 0x51    // Move C to D
+#define MOV_DD 0x52    // Move D to D
+#define MOV_DE 0x53    // Move E to D
+#define MOV_DH 0x54    // Move H to D
+#define MOV_DL 0x55    // Move L to D
+#define MOV_DM 0x56    // Move memory (HL) to D
+#define MOV_DA 0x57    // Move A to D
+#define MOV_EB 0x58    // Move B to E
+#define MOV_EC 0x59    // Move C to E
+#define MOV_ED 0x5A    // Move D to E
+#define MOV_EE 0x5B    // Move E to E
+#define MOV_EH 0x5C    // Move H to E
+#define MOV_EL 0x5D    // Move L to E
+#define MOV_EM 0x5E    // Move memory (HL) to E
+#define MOV_EA 0x5F    // Move A to E
+
+#define MOV_HB 0x60    // Move B to H
+#define MOV_HC 0x61    // Move C to H
+#define MOV_HD 0x62    // Move D to H
+#define MOV_HE 0x63    // Move E to H
+#define MOV_HH 0x64    // Move H to H
+#define MOV_HL 0x65    // Move L to H
+#define MOV_HM 0x66    // Move memory (HL) to H
+#define MOV_HA 0x67    // Move A to H
+#define MOV_LB 0x68    // Move B to L
+#define MOV_LC 0x69    // Move C to L
+#define MOV_LD 0x6A    // Move D to L
+#define MOV_LE 0x6B    // Move E to L
+#define MOV_LH 0x6C    // Move H to L
+#define MOV_LL 0x6D    // Move L to L
+#define MOV_LM 0x6E    // Move memory (HL) to L
+#define MOV_LA 0x6F    // Move A to L
+
+#define MOV_MB 0x70    // Move B to memory (HL)
+#define MOV_MC 0x71    // Move C to memory (HL)
+#define MOV_MD 0x72    // Move D to memory (HL)
+#define MOV_ME 0x73    // Move E to memory (HL)
+#define MOV_MH 0x74    // Move H to memory (HL)
+#define MOV_ML 0x75    // Move L to memory (HL)
+#define HLT    0x76    // Halt
+#define MOV_MA 0x77    // Move A to memory (HL)
+#define MOV_AB 0x78    // Move B to A
+#define MOV_AC 0x79    // Move C to A
+#define MOV_AD 0x7A    // Move D to A
+#define MOV_AE 0x7B    // Move E to A
+#define MOV_AH 0x7C    // Move H to A
+#define MOV_AL 0x7D    // Move L to A
+#define MOV_AM 0x7E    // Move memory (HL) to A
+#define MOV_AA 0x7F    // Move A to A
+
+#define ADD_B  0x80    // Add B to A
+#define ADD_C  0x81    // Add C to A
+#define ADD_D  0x82    // Add D to A
+#define ADD_E  0x83    // Add E to A
+#define ADD_H  0x84    // Add H to A
+#define ADD_L  0x85    // Add L to A
+#define ADD_M  0x86    // Add memory (HL) to A
+#define ADD_A  0x87    // Add A to A
+#define ADC_B  0x88    // Add B to A with carry
+#define ADC_C  0x89    // Add C to A with carry
+#define ADC_D  0x8A    // Add D to A with carry
+#define ADC_E  0x8B    // Add E to A with carry
+#define ADC_H  0x8C    // Add H to A with carry
+#define ADC_L  0x8D    // Add L to A with carry
+#define ADC_M  0x8E    // Add memory (HL) to A with carry
+#define ADC_A  0x8F    // Add A to A with carry
+
+#define SUB_B  0x90    // Subtract B from A
+#define SUB_C  0x91    // Subtract C from A
+#define SUB_D  0x92    // Subtract D from A
+#define SUB_E  0x93    // Subtract E from A
+#define SUB_H  0x94    // Subtract H from A
+#define SUB_L  0x95    // Subtract L from A
+#define SUB_M  0x96    // Subtract memory (HL) from A
+#define SUB_A  0x97    // Subtract A from A
+#define SBB_B  0x98    // Subtract B from A with borrow
+#define SBB_C  0x99    // Subtract C from A with borrow
+#define SBB_D  0x9A    // Subtract D from A with borrow
+#define SBB_E  0x9B    // Subtract E from A with borrow
+#define SBB_H  0x9C    // Subtract H from A with borrow
+#define SBB_L  0x9D    // Subtract L from A with borrow
+#define SBB_M  0x9E    // Subtract memory (HL) from A with borrow
+#define SBB_A  0x9F    // Subtract A from A with borrow
+
+#define ANA_B  0xA0    // AND B with A
+#define ANA_C  0xA1    // AND C with A
+#define ANA_D  0xA2    // AND D with A
+#define ANA_E  0xA3    // AND E with A
+#define ANA_H  0xA4    // AND H with A
+#define ANA_L  0xA5    // AND L with A
+#define ANA_M  0xA6    // AND memory (HL) with A
+#define ANA_A  0xA7    // AND A with A
+#define XRA_B  0xA8    // XOR B with A
+#define XRA_C  0xA9    // XOR C with A
+#define XRA_D  0xAA    // XOR D with A
+#define XRA_E  0xAB    // XOR E with A
+#define XRA_H  0xAC    // XOR H with A
+#define XRA_L  0xAD    // XOR L with A
+#define XRA_M  0xAE    // XOR memory (HL) with A
+#define XRA_A  0xAF    // XOR A with A
+
+#define ORA_B  0xB0    // OR B with A
+#define ORA_C  0xB1    // OR C with A
+#define ORA_D  0xB2    // OR D with A
+#define ORA_E  0xB3    // OR E with A
+#define ORA_H  0xB4    // OR H with A
+#define ORA_L  0xB5    // OR L with A
+#define ORA_M  0xB6    // OR memory (HL) with A
+#define ORA_A  0xB7    // OR A with A
+#define CMP_B  0xB8    // Compare B with A
+#define CMP_C  0xB9    // Compare C with A
+#define CMP_D  0xBA    // Compare D with A
+#define CMP_E  0xBB    // Compare E with A
+#define CMP_H  0xBC    // Compare H with A
+#define CMP_L  0xBD    // Compare L with A
+#define CMP_M  0xBE    // Compare memory (HL) with A
+#define CMP_A  0xBF    // Compare A with A
+
+#define RNZ    0xC0    // Return if not zero
+#define POP_B  0xC1    // Pop B & C from stack
+#define JNZ    0xC2    // Jump if not zero
+#define JMP    0xC3    // Jump
+#define CNZ    0xC4    // Call if not zero
+#define PUSH_B 0xC5    // Push B & C to stack
+#define ADI    0xC6    // Add immediate to A
+#define RST_0  0xC7    // Restart 0
+#define RZ     0xC8    // Return if zero
+#define RET    0xC9    // Return
+#define JZ     0xCA    // Jump if zero
+// 0xCB unused
+#define CZ     0xCC    // Call if zero
+#define CALL   0xCD    // Call
+#define ACI    0xCE    // Add immediate to A with carry
+#define RST_1  0xCF    // Restart 1
+
+#define RNC    0xD0    // Return if no carry
+#define POP_D  0xD1    // Pop D & E from stack
+#define JNC    0xD2    // Jump if no carry
+#define OUT    0xD3    // Output
+#define CNC    0xD4    // Call if no carry
+#define PUSH_D 0xD5    // Push D & E to stack
+#define SUI    0xD6    // Subtract immediate from A
+#define RST_2  0xD7    // Restart 2
+#define RC     0xD8    // Return if carry
+// 0xD9 unused
+#define JC     0xDA    // Jump if carry
+#define IN     0xDB    // Input
+#define CC     0xDC    // Call if carry
+// 0xDD unused
+#define SBI    0xDE    // Subtract immediate from A with borrow
+#define RST_3  0xDF    // Restart 3
+
+#define RPO    0xE0    // Return if parity odd
+#define POP_H  0xE1    // Pop H & L from stack
+#define JPO    0xE2    // Jump if parity odd
+#define XTHL   0xE3    // Exchange HL with top of stack
+#define CPO    0xE4    // Call if parity odd
+#define PUSH_H 0xE5    // Push H & L to stack
+#define ANI    0xE6    // AND immediate with A
+#define RST_4  0xE7    // Restart 4
+#define RPE    0xE8    // Return if parity even
+#define PCHL   0xE9    // Jump to HL
+#define JPE    0xEA    // Jump if parity even
+#define XCHG   0xEB    // Exchange DE with HL
+#define CPE    0xEC    // Call if parity even
+// 0xED unused
+#define XRI    0xEE    // XOR immediate with A
+#define RST_5  0xEF    // Restart 5
+
+#define RP     0xF0    // Return if plus
+#define POP_PSW 0xF1   // Pop A and flags from stack
+#define JP     0xF2    // Jump if plus
+#define DI     0xF3    // Disable interrupts
+#define CP     0xF4    // Call if plus
+#define PUSH_PSW 0xF5  // Push A and flags to stack
+#define ORI    0xF6    // OR immediate with A
+#define RST_6  0xF7    // Restart 6
+#define RM     0xF8    // Return if minus
+#define SPHL   0xF9    // Move HL to SP
+#define JM     0xFA    // Jump if minus
+#define EI     0xFB    // Enable interrupts
+#define CM     0xFC    // Call if minus
+// 0xFD unused
+#define CPI    0xFE    // Compare immediate with A
+#define RST_7  0xFF    // Restart 7
