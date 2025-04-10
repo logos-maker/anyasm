@@ -8,8 +8,10 @@ Can also be usefull when hacking together binary files for tests.
 
 The assembler and hexcode to binarys is not separated stuff, so you can mix it. Can be usefull if you need to hack together a header for your programs.
 So hex numbers can even be given names...
+```
 #DEFINE border D020
 #DEFINE background D021
+```
 ...this makes it possible to make a include file for your custom mnemonics for your CPU or whatever.
 
 It supports include files and decimal number if you put a - or + before the nummer like +10 would generate the same as 0F would.
@@ -20,14 +22,18 @@ It can even include binary files, for easy inclusion of data.
 The assembler/program is 500 lines of code, so it was intionally made simple, and was a quick hack to test the concept.
 
 ## compilation of the assembler
+```
 gcc anyasm.c -o anyasm
-
+```
 ## compilation of code / example program
+```
 ./anyasm -MOS6502 c64_hello_for_anyasm.asm hello.prg
-
+```
 ## compilation of hexfile to binary example
+```
 ./anyasm -little example.hex example.bin
-
+```
 ## quick help in commandprompt
+```
 ./anyasm
-
+```
