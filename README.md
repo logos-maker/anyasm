@@ -2,9 +2,14 @@
 Generic assembler for 6502 and custom CPU's. Can even compile straight hexcode text to binary files.
 Big endian and little endian support, extra usefull if the processor or data is little endian, so bytes in values is reversed for human reading.
 8bit, 16bit, 24bit, 32bit, 48bit, 56bit and 64bit support for hex numbers.
-
-Can be usefull while developing your own CPU's if instructions with op-code followed be operands. So it's mostly usefull for old styles of 8-bit processors.
-Can also be usefull when hacking together binary files for tests. And also as a school book example of a assebler.
+```
+00 ; A 8bit number
+0000 ; A 16bit numer
+000000 ; A 24bit number
+00000000; A 32bit number
+```
+This program can be usefull while developing your own CPU's if instructions with op-code followed be operands. So it's mostly usefull for old styles of 8-bit processors.
+Can also be usefull when hacking together binary files for tests, and as a school book example of a assembler.
 
 The assembler and hexcode to binarys is not separated stuff, so you can mix it. Can be usefull if you need to hack together a header for your programs.
 So hex numbers can even be given names...
