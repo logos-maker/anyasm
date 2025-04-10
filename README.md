@@ -3,6 +3,9 @@ Generic assembler for 6502 and custom CPU's. Can even compile straight hexcode t
 Big endian and little endian support, extra usefull if the processor or data is little endian, so bytes in values is reversed for human reading.
 8bit, 16bit, 24bit, 32bit, 48bit, 56bit and 64bit support for hex numbers. A small, tiny and simple program of only 500 lines of code.
 
+I also put a small program that can generate HEX files from any file, in a format that you can compile back to binary format with anyasm.
+And a file that can generate intel HEX files from binary files, if you want to make a ROM from a binary file, just for the sake of it.
+
 ```
 00 ; A 8bit number
 0000 ; A 16bit numer
