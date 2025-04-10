@@ -378,7 +378,7 @@ void parse_and_write(FILE *input, FILE *output, int little_endian) {
 		if (ferror(file)) perror("Error reading file");
 		fclose(file);
 		size = 0 ; // So the normal generation doesn't create anything
-	} else if (token[0] == '!') { // include another bin file
+	} else if (token[0] == '!') { // include another file
 	    if(len == 1) printf("Found a ! sign with no filename behind it\n");
 	    FILE *input = fopen(token + 1, "r");
 	    if (input == NULL) {
