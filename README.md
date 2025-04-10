@@ -1,8 +1,10 @@
 # anyasm
-Generic assembler for 6502 and custom CPU's. Can even compile straight hexcode text to binary files.
+Generic assembler for 6502, 8080 and custom CPU's. Can even compile straight hexcode text to binary files.
 Big endian and little endian support, extra usefull if the processor or data is little endian, so bytes in values is reversed for human reading.
 8bit, 16bit, 24bit, 32bit, 48bit, 56bit and 64bit support for hex numbers. A small, tiny and simple program of only 500 lines of code.
 
+The support for 8080 is mady by grok, so it's not tested, but included, if it's something wrong in it it's easy to change yourself.
+There is also stubs in the code to compile to M6800 and Z80 as examples if you want to add something like support for 8080, without the include file.
 I also put a small program that can generate HEX files from any file, in a format that you can compile back to binary format with anyasm.
 And a file that can generate intel HEX files from binary files, if you want to make a ROM from a binary file, just for the sake of it.
 
