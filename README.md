@@ -33,6 +33,11 @@ mylabel
 ```
 ...it just inserts the address where mylabel: was crated.
 
+It supports 2 types of style for comments
+```
+STA 0400 // Letter in the upper left corner of the screen
+STA D020 ; border color
+```
 And you can set the adress origin with
 ```
 $0000 ; Sets the address counter in the compiler.
