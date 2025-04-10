@@ -4,7 +4,7 @@ Big endian and little endian support, extra usefull if the processor or data is 
 8bit, 16bit, 24bit, 32bit, 48bit, 56bit and 64bit support for hex numbers.
 
 Can be usefull while developing your own CPU's if instructions with op-code followed be operands. So it's mostly usefull for old styles of 8-bit processors.
-Can also be usefull when hacking together binary files for tests.
+Can also be usefull when hacking together binary files for tests. And also as a school book example of a assebler.
 
 The assembler and hexcode to binarys is not separated stuff, so you can mix it. Can be usefull if you need to hack together a header for your programs.
 So hex numbers can even be given names...
@@ -22,7 +22,21 @@ It can even include binary files, for easy inclusion of data.
 %data.bin ; includes the binary file named data.bin
 ```
 The assembler/program is 500 lines of code, so it was intionally made simple, and was a quick hack to test the concept.
+And it could have been simpler if it was not so generic, or a bit more complex to give it more evolved syntax. 
+Check the C source code for more hints of what it can do. Obviously it has support for labels in a style like..
+```
+mylabel:
+```
+when you later write
+```
+mylabel
+```
+...it just inserts the address where mylabel: was crated.
 
+And you can set the adress origin with
+```
+$0000 ; Sets the address counter in the compiler.
+```
 ## compilation of the assembler
 ```
 gcc anyasm.c -o anyasm
