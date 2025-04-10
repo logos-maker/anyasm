@@ -28,26 +28,28 @@ It can even include binary files, for easy inclusion of data.
 ```
 The assembler/program is 500 lines of code, so it was intionally made simple, and was a quick hack to test the concept.
 And it could have been simpler if it was not so generic, or a bit more complex to give it more evolved syntax. 
-Check the C source code for more hints of what it can do. Obviously it has support for labels in a style like..
+Check the C source code for more hints of what it can do. The code is easy enough to make some changes in it even if you are not a programmer, but then I'm not sure why you are on githug and looking.
+
+Obviously it has support for labels, in a style like...
 ```
 mylabel:
 ```
-when you later write
+when you later write...
 ```
 mylabel
 ```
 ...it just inserts the address where mylabel: was crated.
 
-It supports 2 types of style for comments
+It supports 2 types of style for comments...
 ```
 STA 0400 // Letter in the upper left corner of the screen
 STA D020 ; border color
 ```
-And you can set the adress origin with
+And you can set the adress origin with...
 ```
-$0000 ; Sets the address counter in the compiler.
+$0000 ; Sets the address counter in the compiler to adress 0
 ```
-## compilation of the assembler
+## compilation of the assembler - creates the command
 ```
 gcc anyasm.c -o anyasm
 ```
