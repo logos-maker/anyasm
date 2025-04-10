@@ -16,9 +16,11 @@ So hex numbers can even be given names...
 
 It supports include files and decimal number if you put a - or + before the nummer like +10 would generate the same as 0F would.
 It can even include binary files, for easy inclusion of data.
+```
 !mnemonics ; includes the code file mnemonics
+!routine.asm ; includes the code file routine.asm
 %data.bin ; includes the binary file named data.bin
-
+```
 The assembler/program is 500 lines of code, so it was intionally made simple, and was a quick hack to test the concept.
 
 ## compilation of the assembler
