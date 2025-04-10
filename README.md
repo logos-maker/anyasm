@@ -56,6 +56,7 @@ $0000 ; Sets the address counter in the compiler to adress 0
 ## TODO
 Make it possible to select header for your compiled program, like ELF and others like intelHEX formating for EPROM burning and stuff like that.
 Make it generate text files from binary files, that you then can convert back with this program.
+Maybe I separate out the mnemonics to include files so the program gets smaller, and also add a include file to support 8080.
 
 ## compilation of the assembler - creates the command
 ```
