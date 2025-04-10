@@ -1,7 +1,8 @@
 # anyasm
 Generic assembler for 6502 and custom CPU's. Can even compile straight hexcode text to binary files.
 Big endian and little endian support, extra usefull if the processor or data is little endian, so bytes in values is reversed for human reading.
-8bit, 16bit, 24bit, 32bit, 48bit, 56bit and 64bit support for hex numbers.
+8bit, 16bit, 24bit, 32bit, 48bit, 56bit and 64bit support for hex numbers. A small, tiny and simple program of only 500 lines of code.
+
 ```
 00 ; A 8bit number
 0000 ; A 16bit numer
@@ -26,7 +27,7 @@ It can even include binary files, for easy inclusion of data.
 !routine.asm ; includes the code file routine.asm
 %data.bin ; includes the binary file named data.bin
 ```
-The assembler/program is 500 lines of code, so it was intionally made simple, and was a quick hack to test the concept.
+The assembler/program is 500 lines of code, so it was intionally made simple, and was a quick hack to test the concept to make a hex to bin converter and make it assemble programs.
 And it could have been simpler if it was not so generic, or a bit more complex to give it more evolved syntax. 
 Check the C source code for more hints of what it can do. The code is easy enough to make some changes in it even if you are not a programmer, but then I'm not sure why you are on githug and looking.
 
@@ -49,6 +50,10 @@ And you can set the address origin with...
 ```
 $0000 ; Sets the address counter in the compiler to adress 0
 ```
+## TODO
+Make it possible to select header for your compiled program, like ELF and others like intelHEX formating for EPROM burning and stuff like that.
+Make it generate text files from binary files, that you then can convert back with this program.
+
 ## compilation of the assembler - creates the command
 ```
 gcc anyasm.c -o anyasm
