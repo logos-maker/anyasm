@@ -47,7 +47,7 @@ when you later write...
 ```
 mylabel
 ```
-...it just inserts the address where mylabel: was crated.
+...it just inserts the address where mylabel: was created.
 
 It supports 2 types of style for comments...
 ```
