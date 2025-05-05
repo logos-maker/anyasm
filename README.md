@@ -21,7 +21,7 @@ This program can be usefull while developing your own CPU's if instructions with
 Can also be usefull when hacking together binary files for tests, and as a school book example of a assembler.
 
 The assembler and hexcode to binarys is not separated stuff, so you can mix it. Can be usefull if you need to hack together a header for your programs.
-So hex numbers can even be given names...
+And hex numbers can even be given names like this...
 ```
 #DEFINE border D020
 #DEFINE background D021
